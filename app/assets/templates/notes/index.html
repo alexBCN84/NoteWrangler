@@ -4,5 +4,6 @@
   <div ng-repeat="note in notes" class="col-sm-6">
     <h2><a ng-href="#/notes/{{note.id}}">{{note.title}}</a></h2>
     <p>{{note.description}}</p>
+    <p><span class="label label-info">{{note.category.name}}</span></p>
   </div>
 </div>
