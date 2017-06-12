@@ -7,7 +7,16 @@
     <link rel="stylesheet" href="assets/styles/bootstrap-theme.css"></link>
   </head>
   <body>
-    <nw-page-nav></nw-page-nav>
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <div class="navbar-brand">
+            <a href="/#/">NoteWrangler</a>
+          </div>
+          <nw-page-nav></nw-page-nav>
+        </div>
+      </div>
+    </nav>
     <div ng-view class="container"></div>
   </body>
 
