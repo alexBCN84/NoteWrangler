@@ -1,9 +1,10 @@
 angular.module('NoteWrangler').directive('nwCategorySelector', function(Category){
   return {
     replace: true,
+    require: '?ngModel',
     restrict: 'E',
     templateUrl: 'assets/templates/directives/nwCategorySelector.html',
-    link : function(scope, element, attrs){
+    link : function(scope, element, attrs, ngModelCtrl){
       var activeCategory = {};
       scope.categories = Category.query();
 
@@ -16,7 +17,11 @@ angular.module('NoteWrangler').directive('nwCategorySelector', function(Category
         } else {
           activeCategory = category;
         }
+        ngModelCtrl.$setViewValue(activeCategory);
       };
+      ngModelCtrl.$render = function() {
+        activeCategory = ngModelCtrl.$viewValue;
+      }
     }
   };
 });
